@@ -1,0 +1,52 @@
+
+--Criar banco de dados com o devido nome
+CREATE DATABASE SENAI_HROADS_TARDE;
+GO
+
+USE SENAI_HROADS_TARDE;
+GO
+
+--DDL
+
+--Criar as tabelas do banco de dados
+CREATE TABLE TIPOHABILIDADE (
+idTipoHabilidade TINYINT PRIMARY KEY IDENTITY (1,1),
+nomeTipoHabilidade VARCHAR(100) NOT NULL
+);
+GO
+
+CREATE TABLE HABILIDADE1 (
+idHabilidade1 SMALLINT PRIMARY KEY IDENTITY (1,1),
+idTipoHabilidade TINYINT FOREIGN KEY REFERENCES tipoHabilidade (idTipoHabilidade),
+nomeHabilidade1 VARCHAR(150),
+);
+GO
+
+DROP TABLE HABILIDADE;
+GO
+
+CREATE TABLE HABILIDADE2 (
+idHabilidade2 SMALLINT PRIMARY KEY IDENTITY (1,1),
+idTipoHabilidade TINYINT FOREIGN KEY REFERENCES tipoHabilidade (idTipoHabilidade),
+nomeHabilidade2 VARCHAR(150),
+);
+GO
+
+CREATE TABLE CLASSE (
+idClasse TINYINT PRIMARY KEY IDENTITY (1,1),
+idHabilidade SMALLINT FOREIGN KEY REFERENCES HABILIDADE1 (idHabilidade1),
+idHabilidade2 SMALLINT FOREIGN KEY REFERENCES HABILIDADE2 (idHabilidade2),
+nomeClasse VARCHAR (100) NOT NULL
+);
+GO
+
+CREATE TABLE PERSONAGEM (
+idPersonagem INT PRIMARY KEY IDENTITY (1,1),
+idClasse TINYINT FOREIGN KEY REFERENCES CLASSE(idClasse),
+nomePersonagem VARCHAR (200) NOT NULL,
+capacidadeVidaMax SMALLINT NOT NULL,
+CapacidadeManaMax TINYINT NOT NULL,
+dataUtilizacao DATE NOT NULL,
+dataCriacao DATE NOT NULL
+);
+GO

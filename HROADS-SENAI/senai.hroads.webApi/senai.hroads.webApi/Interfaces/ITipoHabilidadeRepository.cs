@@ -32,20 +32,20 @@ namespace senai.hroads.webApi_.Interfaces
         /// </summary>
         /// <param name="id">id do tipo habilidade que será atualizado</param>
         /// <param name="tipoHabilidadeAtualizado">Objeto contendo o tipo habilidade atuaizado</param>
-        void Atualizar(int id, TiposUsuario tipoHabilidadeAtualizado);
+        void Atualizar(int id, TiposHabilidade tipoHabilidadeAtualizado);
 
         /// <summary>
         /// busca um tipo habilidade pelo id
         /// </summary>
-        /// <param name="id"> id do tipo usuari que será buscado</param>
-        /// <returns>o tipo usuariio buscado</returns>
-        TiposUsuario BuscarPorId(int id);
+        /// <param name="id"> id do tipo habilidade que será buscado</param>
+        /// <returns>o tipo habilidade buscado</returns>
+        TiposHabilidade BuscarPorId(int id);
 
 
         /// <summary>
-        /// deleta um tipo de usuario
+        /// deleta um tipo de habilidade
         /// </summary>
-        /// <param name="id">id do tipo de usuario passado</param>
+        /// <param name="id">id do tipo de habilidade passado</param>
         void Deletar(int id);
     }
 }

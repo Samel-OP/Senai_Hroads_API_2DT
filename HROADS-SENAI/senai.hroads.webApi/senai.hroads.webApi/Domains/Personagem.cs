@@ -23,9 +23,6 @@ namespace senai.hroads.webApi_.Domains
     // dataUtilizacao
     // dataCriacao
 
-
-
-
     [Table("Habilidade")]
     public class Personagem
     {

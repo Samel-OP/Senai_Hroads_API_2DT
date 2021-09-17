@@ -7352,31 +7352,19 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Microsoft.EntityFrameworkCore >= 5.0.10",
+      "Microsoft.EntityFrameworkCore.Design >= 5.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.6",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.10"
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\fic\\.nuget\\packages\\": {}
-=======
     "C:\\Users\\dev\\.nuget\\packages\\": {}
->>>>>>> 98991603c58e4d4fba5285db01d386903b84e00e
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\fic\\Desktop\\Hroads\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
-      "projectName": "senai.hroads.webApi.",
-      "projectPath": "C:\\Users\\fic\\Desktop\\Hroads\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
-      "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fic\\Desktop\\Hroads\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
       "projectUniqueName": "C:\\Users\\dev\\Desktop\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
       "projectName": "senai.hroads.webApi.",
       "projectPath": "C:\\Users\\dev\\Desktop\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
@@ -7385,7 +7373,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 98991603c58e4d4fba5285db01d386903b84e00e
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7411,6 +7398,16 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.10, )"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[5.0.10, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[5.0.10, )"

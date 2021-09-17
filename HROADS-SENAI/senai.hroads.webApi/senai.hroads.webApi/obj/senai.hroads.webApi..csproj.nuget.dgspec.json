@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samue\\Desktop\\Hroads\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj": {}
+    "C:\\Users\\Vinicius\\Desktop\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj": {}
   },
   "projects": {
-    "C:\\Users\\samue\\Desktop\\Hroads\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj": {
+    "C:\\Users\\Vinicius\\Desktop\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samue\\Desktop\\Hroads\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
+        "projectUniqueName": "C:\\Users\\Vinicius\\Desktop\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
         "projectName": "senai.hroads.webApi.",
-        "projectPath": "C:\\Users\\samue\\Desktop\\Hroads\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
-        "packagesPath": "C:\\Users\\samue\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samue\\Desktop\\Hroads\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\obj\\",
+        "projectPath": "C:\\Users\\Vinicius\\Desktop\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
+        "packagesPath": "C:\\Users\\Vinicius\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Vinicius\\Desktop\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\samue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Vinicius\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -9,7 +9,7 @@ namespace senai.hroads.webApi_.Repositories
 {
     public class ClasseRepository : IClasseRepository
     {
-        HroadsContext ctx = new 
+        //HroadsContext ctx = new 
 
         public void Atualizar(int idClasse, Classe classeAtualizada)
         {

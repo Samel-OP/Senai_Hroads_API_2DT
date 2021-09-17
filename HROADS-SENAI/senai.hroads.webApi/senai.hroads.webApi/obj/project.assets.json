@@ -7358,11 +7358,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\fic\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\dev\\.nuget\\packages\\": {}
+>>>>>>> 98991603c58e4d4fba5285db01d386903b84e00e
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\fic\\Desktop\\Hroads\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
       "projectName": "senai.hroads.webApi.",
       "projectPath": "C:\\Users\\fic\\Desktop\\Hroads\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
@@ -7371,6 +7376,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\dev\\Desktop\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
+      "projectName": "senai.hroads.webApi.",
+      "projectPath": "C:\\Users\\dev\\Desktop\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
+      "packagesPath": "C:\\Users\\dev\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dev\\Desktop\\Senai_Hroads_API_2DT\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 98991603c58e4d4fba5285db01d386903b84e00e
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7429,7 +7444,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

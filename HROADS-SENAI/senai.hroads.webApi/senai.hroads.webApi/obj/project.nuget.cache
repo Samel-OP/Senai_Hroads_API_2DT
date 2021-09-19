@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/zNzB5rwSdoFi6Z+uFd33s+AVKH5PlUSJjJ4NZzqwkQ3E3zhXeE8tbSvojKAkS2FOdTHUsG4gAsa7ntis0AnWg==",
+  "dgSpecHash": "tl4tvRPo0FfvcPw3JY7ZGmAVBdNZoeCrHK8CjRJihNtTdsA2pA6t3GbbdZ83wRZZyVKIVfAbsAROhwBxMnD4Qg==",
   "success": true,
   "projectFilePath": "C:\\Users\\samue\\Desktop\\Hroads\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi..csproj",
   "expectedPackageFiles": [
@@ -136,5 +136,12 @@
     "C:\\Users\\samue\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\samue\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\samue\\Desktop\\Hroads\\HROADS-SENAI\\senai.hroads.webApi\\senai.hroads.webApi\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

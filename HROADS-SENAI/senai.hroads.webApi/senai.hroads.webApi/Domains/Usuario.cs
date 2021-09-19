@@ -19,6 +19,7 @@ namespace senai.hroads.webApi_.Domains
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idUsuario { get; set; }
+
         public int idTpoUsuario { get; set; }
 
         [Column("varchar(100)")]

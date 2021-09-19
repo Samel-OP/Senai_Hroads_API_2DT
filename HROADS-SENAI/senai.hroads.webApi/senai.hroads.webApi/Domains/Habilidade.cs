@@ -20,9 +20,13 @@ namespace senai.hroads.webApi_.Domains
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idHabilidade { get; set; }
 
+        public int idTipoHabilidade { get; set; }
 
         [Column(TypeName ="varchar(100)")]
         [Required(ErrorMessage ="O nome da habilidade é obrigatório!")]
         public string nomeHabilidade { get; set; }
+
+        [ForeignKey("idTipoHabilidade")]
+        public TiposHabilidade tiposHabilidade { get; set; }
     }
 }

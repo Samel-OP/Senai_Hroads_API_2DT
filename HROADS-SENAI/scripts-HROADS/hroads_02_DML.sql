@@ -13,10 +13,6 @@ INSERT INTO HABILIDADE1 (idTipoHabilidade,nomeHabilidade1)
 VALUES (1,'Lança Mortal'),(2,'Escudo Supremo'),(3,'Recuperar Vida');
 
 
-INSERT INTO HABILIDADE2 (idTipoHabilidade,nomeHabilidade2)
-VALUES (1,'Lança Mortal'),(2,'Escudo Supremo'),(3,'Recuperar Vida');
-
-
 INSERT INTO CLASSE (idHabilidade,idHabilidade2,nomeClasse)
 VALUES (1,2,'Bárbaro'),(2,null,'Cruzado'),(1,null,'Caçadora de Demônios'),(3,2,'Monge'),(null,null,'Necromante'),(3,null,'Feiticeiro'),(null,null,'Arcanista');
 

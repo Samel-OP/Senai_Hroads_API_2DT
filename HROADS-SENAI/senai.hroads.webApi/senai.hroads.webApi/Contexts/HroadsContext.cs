@@ -25,7 +25,6 @@ namespace senai.hroads.webApi_.Contexts
 
         public DbSet<Personagem> Personagem { get; set; }
 
-        public DbSet<Login> Login { get; set; }
 
 
         /// <summary>

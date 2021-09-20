@@ -1,4 +1,6 @@
-﻿using senai.hroads.webApi_.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using senai.hroads.webApi_.Contexts;
+using senai.hroads.webApi_.Domains;
 using senai.hroads.webApi_.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,31 +11,49 @@ namespace senai.hroads.webApi_.Repositories
 {
     public class ClasseRepository : IClasseRepository
     {
-        //HroadsContext ctx = new 
+        /// <summary>
+        /// Objeto contexto por onde serão chamados os métodos do EF Core
+        /// </summary>
+        HroadsContext ctx = new HroadsContext();
 
         public void Atualizar(int idClasse, Classe classeAtualizada)
         {
-            throw new NotImplementedException();
+            Classe classeBuscada = ctx.Classe.Find(idClasse);
+
+            if (classeAtualizada.nomeClasse != null)
+            {
+                classeBuscada.nomeClasse = classeAtualizada.nomeClasse;
+            }
+
+            ctx.Classe.Update(classeBuscada);
+
+            ctx.SaveChanges();
         }
 
         public void Cadastrar(Classe novaClasse)
         {
-            throw new NotImplementedException();
+            ctx.Classe.Add(novaClasse);
+
+            ctx.SaveChanges();
         }
 
         public void Deletar(int idClasse)
         {
-            throw new NotImplementedException();
+            Classe classeBuscada = ListarPorId(idClasse);
+
+            ctx.Classe.Remove(classeBuscada);
+
+            ctx.SaveChanges();
         }
 
         public List<Classe> Listar()
         {
-            throw new NotImplementedException();
+            return ctx.Classe.ToList();
         }
 
         public Classe ListarPorId(int idClasse)
         {
-            throw new NotImplementedException();
+            return ctx.Classe.FirstOrDefault(e => e.idClasse == idClasse);
         }
     }
 }

@@ -14,6 +14,8 @@ namespace senai.hroads.webApi.Interfaces
         //ListarPorId
         //Deletar
 
+        Usuario Login(string email, string senha);
+
         /// <summary>
         /// Cadastra um novo tipo de usuario 
         /// </summary>
@@ -25,7 +27,6 @@ namespace senai.hroads.webApi.Interfaces
         /// </summary>
         /// <returns> uma lista de usuario</returns>
         List<Usuario> Listar();
-
 
         /// <summary>
         /// atualiza um tipo de usuario pelo id
@@ -41,7 +42,6 @@ namespace senai.hroads.webApi.Interfaces
         /// <returns>o tipo usuariio buscado</returns>
         Usuario BuscarPorId(int id);
 
-
         /// <summary>
         /// deleta um tipo de usuario
         /// </summary>
@@ -54,6 +54,5 @@ namespace senai.hroads.webApi.Interfaces
         /// <param name="email">E-mail do usuário</param>
         /// <param name="senha">Senha do usuário</param>
         /// <returns>Um objeto do tipo Usuario que foi encontrado</returns>
-        Usuario Login(string email, string senha);
     }
 }

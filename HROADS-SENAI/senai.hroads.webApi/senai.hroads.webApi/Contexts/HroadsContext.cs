@@ -27,7 +27,6 @@ namespace senai.hroads.webApi_.Contexts
 
         public DbSet<Personagem> Personagem { get; set; }
 
-        public DbSet<Login> Login { get; set; }
 
         /// <summary>
         /// método que define a construção do banco de dados;
@@ -36,8 +35,8 @@ namespace senai.hroads.webApi_.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) //method that we do a override to configure the database and other options.
         {
             //connection string.
-            optionsBuilder.UseSqlServer("Server=DESKTOP-20INV7D\\SQLEXPRESS; DataBase=SENAI_HROADS_API_TARDE; user ID=sa; pwd=SenaiSamuel1;");
-            //optionsBuilder.UseSqlServer(@"Server= DESKTOP-DHSRSVI\SQLEXPRESS; Database = SENAI_HROADS_TARDE; user ID= sa; pwd = senai@132");
+            //optionsBuilder.UseSqlServer("Server=DESKTOP-20INV7D\\SQLEXPRESS; DataBase=SENAI_HROADS_API_TARDE; user ID=sa; pwd=SenaiSamuel1;");
+            optionsBuilder.UseSqlServer(@"Server= DESKTOP-DHSRSVI\SQLEXPRESS; Database = SENAI_HROADS_TARDE; user ID= sa; pwd = senai@132");
 
             base.OnConfiguring(optionsBuilder); //It need to be in a override.
         }
@@ -64,28 +63,28 @@ namespace senai.hroads.webApi_.Contexts
                 new Usuario
                 {
                     idUsuario = 1,
-                    idTpoUsuario = 1,
+                    idTipoUsuario = 1,
                     nomeUsuario = "Administrador",
-                    email = "adm@gmail.com",
-                    senha = "adm123"
+                    Email = "adm@gmail.com",
+                    Senha = "adm123"
                 },
 
                 new Usuario
                 {
                     idUsuario = 2,
-                    idTpoUsuario = 2,
+                    idTipoUsuario = 2,
                     nomeUsuario = "Robson",
-                    email = "robson@gmail.com",
-                    senha = "robson123"
+                    Email = "robson@gmail.com",
+                    Senha = "robson123"
                 },
 
                 new Usuario
                 {
                     idUsuario = 3,
-                    idTpoUsuario = 2,
+                    idTipoUsuario = 2,
                     nomeUsuario = "Clebinho",
-                    email = "clebinho@gmail.com",
-                    senha = "clebinho123"
+                    Email = "clebinho@gmail.com",
+                    Senha = "clebinho123"
                 } 
                 
                );
@@ -225,7 +224,7 @@ namespace senai.hroads.webApi_.Contexts
 
                 new Personagem
                 {
-                    idPersonagem = 1,
+                    idPersonagem = 2,
                     idClasse = 4,
                     NomePersongaem = "BitBug",
                     capacidadeDeVidaMax = 70,
@@ -236,7 +235,7 @@ namespace senai.hroads.webApi_.Contexts
 
                 new Personagem
                 {
-                    idPersonagem = 1,
+                    idPersonagem = 3,
                     idClasse = 7,
                     NomePersongaem = "Fer8",
                     capacidadeDeVidaMax = 75,
@@ -245,6 +244,8 @@ namespace senai.hroads.webApi_.Contexts
                     dataCriacao = Convert.ToDateTime("18/03/2018")
                 }
                );
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -26,6 +26,11 @@ namespace senai.hroads.webApi_.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+        /// <summary>
+        /// Faz login para ter acesso (Criação do Token)
+        /// </summary>
+        /// <param name="login">Objeto login onde é feita a autenticação dos dados para ter acesso</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Login(LoginViewModel login)
         {

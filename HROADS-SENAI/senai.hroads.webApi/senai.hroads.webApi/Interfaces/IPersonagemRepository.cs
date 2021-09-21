@@ -10,7 +10,7 @@ using System.Threading.Tasks;
    /// </summary>
 namespace senai.hroads.webApi_.Interfaces
 {
-    interface IPersonagem
+    interface IPersonagemRepository
     {
         //Cadastrar
         //Listar

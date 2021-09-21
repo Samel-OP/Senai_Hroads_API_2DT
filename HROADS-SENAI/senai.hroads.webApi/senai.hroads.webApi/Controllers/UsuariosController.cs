@@ -14,11 +14,11 @@ namespace senai.hroads.webApi_.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class UsuariosController : ControllerBase
     {
         private IUsuarioRepository _usuarioRepository { get; set; }
 
-        public UsuarioController()
+        public UsuariosController()
         {
             _usuarioRepository = new UsuarioRepository();
         }
@@ -111,7 +111,7 @@ namespace senai.hroads.webApi_.Controllers
         /// Cadastra um novo usuário
         /// </summary>
         /// <returns>Um status code 201 - Created</returns>
-        [Authorize(Roles = "administrador")]
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Usuario novoUsuario)
         {

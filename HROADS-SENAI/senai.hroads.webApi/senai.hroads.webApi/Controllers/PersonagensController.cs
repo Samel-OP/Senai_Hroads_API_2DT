@@ -28,7 +28,7 @@ namespace senai.hroads.webApi_.Controllers
 
 
         //TESTADO
-        [Authorize(Roles = "administrador, jogador")]
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -71,7 +71,7 @@ namespace senai.hroads.webApi_.Controllers
         }
 
         //TESTADO 
-        [Authorize(Roles = "jogador")]
+        [Authorize(Roles = "2")]
         [HttpPost]
         public IActionResult Cadastrar(Personagem novoPersonagem)
         {

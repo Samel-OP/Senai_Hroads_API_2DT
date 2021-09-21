@@ -48,11 +48,11 @@ namespace senai.hroads.webApi_.Controllers
         public IActionResult BuscarPorId(int id)
         {
             TiposUsuario tipoUsuarioBuscado = _tipoUsuarioRepository.BuscarPorId(id);
-            
+
             if (tipoUsuarioBuscado == null)
             {
                 return NotFound(
-                    new 
+                    new
                     {
                         mensagem = "Esse tipo de usuário não existe ou algo de errado!",
                         erro = true
@@ -105,7 +105,7 @@ namespace senai.hroads.webApi_.Controllers
         /// Cadastra um novo tipo de usuário
         /// </summary>
         /// <returns>Um status code 201 - Created</returns>
-        [Authorize(Roles = "administrador")]
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(TiposUsuario novoTipoUsuario)
         {
@@ -136,7 +136,7 @@ namespace senai.hroads.webApi_.Controllers
         /// <param name="id">id do tipo de usuário que será deletado</param>
         /// <returns>Um status code 204 - No Content</returns>
         /// ex: http://localhost:5000/api/tiposUsuario/excluir/1
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
             TiposUsuario tipoUsuarioBuscado = _tipoUsuarioRepository.BuscarPorId(id);

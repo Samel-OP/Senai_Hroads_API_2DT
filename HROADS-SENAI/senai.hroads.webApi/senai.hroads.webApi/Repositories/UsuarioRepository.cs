@@ -1,4 +1,5 @@
-﻿using senai.hroads.webApi.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using senai.hroads.webApi.Interfaces;
 using senai.hroads.webApi_.Contexts;
 using senai.hroads.webApi_.Domains;
 using System;
@@ -52,7 +53,7 @@ namespace senai.hroads.webApi_.Repositories
 
         public List<Usuario> Listar()
         {
-            return ctx.Usuario.ToList();
+            return ctx.Usuario.Include(t => t.tipoUsuario).ToList();
         }
 
         public Usuario Login(string email, string senha)

@@ -25,7 +25,7 @@ namespace senai.hroads.webApi_
             services.AddControllers()
             .AddNewtonsoftJson(options => {
                  options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore; //método para ignorar valores nullos 
              });
 
             services.AddSwaggerGen(c =>

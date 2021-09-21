@@ -47,5 +47,13 @@ namespace senai.hroads.webApi.Interfaces
         /// </summary>
         /// <param name="id">id do tipo de usuario passado</param>
         void Deletar(int id);
+
+        /// <summary>
+        /// Valida o usuário
+        /// </summary>
+        /// <param name="email">E-mail do usuário</param>
+        /// <param name="senha">Senha do usuário</param>
+        /// <returns>Um objeto do tipo Usuario que foi encontrado</returns>
+        Usuario Login(string email, string senha);
     }
 }

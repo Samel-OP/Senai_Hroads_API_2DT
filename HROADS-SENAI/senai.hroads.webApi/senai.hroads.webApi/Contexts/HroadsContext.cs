@@ -35,8 +35,8 @@ namespace senai.hroads.webApi_.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) //method that we do a override to configure the database and other options.
         {
             //connection string.
-            //optionsBuilder.UseSqlServer("Server=DESKTOP-20INV7D\\SQLEXPRESS; DataBase=SENAI_HROADS_API_TARDE; user ID=sa; pwd=SenaiSamuel1;");
-            optionsBuilder.UseSqlServer(@"Server= DESKTOP-DHSRSVI\SQLEXPRESS; Database = SENAI_HROADS_TARDE; user ID= sa; pwd = senai@132");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-20INV7D\\SQLEXPRESS; DataBase=SENAI_HROADS_API_TARDE; user ID=sa; pwd=SenaiSamuel1;");
+            //optionsBuilder.UseSqlServer(@"Server= DESKTOP-DHSRSVI\SQLEXPRESS; Database = SENAI_HROADS_TARDE; user ID= sa; pwd = senai@132");
 
             base.OnConfiguring(optionsBuilder); //It need to be in a override.
         }

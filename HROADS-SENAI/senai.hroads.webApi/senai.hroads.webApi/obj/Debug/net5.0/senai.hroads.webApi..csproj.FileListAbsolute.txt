@@ -111,3 +111,4 @@ C:\Users\samue\Desktop\Hroads\HROADS-SENAI\senai.hroads.webApi\senai.hroads.webA
 C:\Users\samue\Desktop\Hroads\HROADS-SENAI\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\ref\senai.hroads.webApi..dll
 C:\Users\samue\Desktop\Hroads\HROADS-SENAI\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi..pdb
 C:\Users\samue\Desktop\Hroads\HROADS-SENAI\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi..genruntimeconfig.cache
+C:\Users\Vinicius\Desktop\Senai_Hroads_API_2DT\HROADS-SENAI\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi..csproj.AssemblyReference.cache

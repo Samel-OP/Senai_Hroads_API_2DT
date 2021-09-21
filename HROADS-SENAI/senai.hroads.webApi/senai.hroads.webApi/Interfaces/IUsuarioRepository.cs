@@ -14,6 +14,8 @@ namespace senai.hroads.webApi.Interfaces
         //ListarPorId
         //Deletar
 
+        Usuario Login(string email, string senha);
+
         /// <summary>
         /// Cadastra um novo tipo de usuario 
         /// </summary>

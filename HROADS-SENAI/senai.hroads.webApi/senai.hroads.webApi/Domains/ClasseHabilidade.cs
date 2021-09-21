@@ -20,10 +20,14 @@ namespace senai.hroads.webApi_.Domains
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idClasseHabilidade { get; set; }
 
-        [ForeignKey("idClasse")]
         public int idClasse { get; set; }
 
-        [ForeignKey("idHabilidade")]
         public int idHabilidade { get; set; }
+
+        [ForeignKey("idClasse")]
+        public Classe classe { get; set; }
+
+        [ForeignKey("idHabilidade")]
+        public Habilidade habilidade { get; set; }
     }
 }

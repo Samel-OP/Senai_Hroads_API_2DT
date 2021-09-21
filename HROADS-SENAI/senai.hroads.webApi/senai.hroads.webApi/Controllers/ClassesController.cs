@@ -1,0 +1,155 @@
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using senai.hroads.webApi_.Domains;
+using senai.hroads.webApi_.Interfaces;
+using senai.hroads.webApi_.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace senai.hroads.webApi_.Controllers
+{
+
+    //resposta da API em json
+    [Produces("application/json")]
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ClassesController : ControllerBase
+    {
+        private IClasseRepository _classeRepository { get; set; }
+
+        public ClassesController()
+        {
+            _classeRepository = new ClasseRepository();
+        }
+
+
+        //TESTADO
+        [HttpGet]
+        public IActionResult ListarTodos()
+        {
+            try
+            {
+                return Ok(_classeRepository.Listar());
+            }
+            catch (Exception excep)
+            {
+
+                return BadRequest(excep);
+            }
+        }
+
+
+        //TESTADO
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(int id)
+        {
+            Classe classeBuscada = _classeRepository.ListarPorId(id);
+
+
+            if (classeBuscada == null)
+            {
+                return NotFound(
+                    new
+                    {
+                        mensagem = "Essa classe não existe ou algo deu errado !",
+                        erro = true
+                    }
+                    );
+            }
+
+            try
+            {
+                return Ok(classeBuscada);
+            }
+            catch (Exception excep)
+            {
+
+                return BadRequest(excep);
+            }
+        }
+
+        //TESTADO
+        [HttpPut("{id}")]
+        public IActionResult AtualizarPorId(int id, Classe classeAtualizada)
+        {
+            Classe classeBuscada = _classeRepository.ListarPorId(id);
+
+
+            if (classeBuscada == null)
+            {
+                return NotFound(
+                    new
+                    {
+                        mensagem = "Essa classe não existe ou algo deu errado !",
+                        erro = true
+                    }
+                    );
+            }
+
+            try
+            {
+                _classeRepository.Atualizar(id, classeAtualizada);
+                return NoContent();
+            }
+            catch (Exception execp)
+            {
+                return BadRequest(execp);
+            }
+        }
+
+
+        //TESTADO
+        [HttpPost]
+        public IActionResult Cadastrar(Classe novaClasse)
+        {
+
+            if (novaClasse != null)
+            {
+                try
+                {
+                    _classeRepository.Cadastrar(novaClasse);
+                    return Ok();
+                }
+                catch (Exception execp)
+                {
+                    return BadRequest(execp);
+                }
+            }
+
+            return NotFound(
+                new
+                {
+                    mensagem = "Campo vazio !",
+                    erro = true
+                }
+
+
+                );
+
+        }
+
+        //TESTADO
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+            Classe classebuscada = _classeRepository.ListarPorId(id);
+
+            if (classebuscada != null)
+            {
+                try
+                {
+                    _classeRepository.Deletar(id);
+                    return NoContent();
+                }
+                catch (Exception execp)
+                {
+                    return BadRequest(execp);
+                }
+            }
+
+            return NotFound("Id não encontrado ou o campo está vazio !");
+        }
+    }
+}

@@ -23,7 +23,7 @@ namespace senai.hroads.webApi_.Domains
     // dataUtilizacao
     // dataCriacao
 
-    [Table("Habilidade")]
+    [Table("Personagem")]
     public class Personagem
     {
         [Key]
@@ -54,5 +54,7 @@ namespace senai.hroads.webApi_.Domains
 
         [ForeignKey("idClasse")]
         public Classe classe { get; set; }
+
+       
     }
 }

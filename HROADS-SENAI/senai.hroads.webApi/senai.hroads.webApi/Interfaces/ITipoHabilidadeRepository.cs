@@ -17,7 +17,7 @@ namespace senai.hroads.webApi_.Interfaces
         /// <summary>
         /// Cadastra um novo tipo de habilidade
         /// </summary>
-        /// <param name="novoTipoUsuario">Objeto contendo as informações do novo tipo de habilidade</param>
+        /// <param name="novoTipoHabilidade">Objeto contendo as informações do novo tipo de habilidade</param>
         void Cadastrar(TiposHabilidade novoTipoHabilidade);
 
         /// <summary>

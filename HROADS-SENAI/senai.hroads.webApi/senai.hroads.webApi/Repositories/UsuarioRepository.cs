@@ -57,7 +57,7 @@ namespace senai.hroads.webApi_.Repositories
 
         public Usuario Login(string email, string senha)
         {
-            return ctx.Usuario.FirstOrDefault(u => u.email == email && u.senha == senha);
+            return ctx.Usuario.FirstOrDefault(u => u.Email == email && u.Senha == senha);
         }
     }
 }

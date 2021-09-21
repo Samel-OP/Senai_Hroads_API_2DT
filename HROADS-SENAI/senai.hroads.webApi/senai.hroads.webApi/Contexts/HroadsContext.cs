@@ -63,28 +63,28 @@ namespace senai.hroads.webApi_.Contexts
                 new Usuario
                 {
                     idUsuario = 1,
-                    idTpoUsuario = 1,
+                    idTipoUsuario = 1,
                     nomeUsuario = "Administrador",
-                    email = "adm@gmail.com",
-                    senha = "adm123"
+                    Email = "adm@gmail.com",
+                    Senha = "adm123"
                 },
 
                 new Usuario
                 {
                     idUsuario = 2,
-                    idTpoUsuario = 2,
+                    idTipoUsuario = 2,
                     nomeUsuario = "Robson",
-                    email = "robson@gmail.com",
-                    senha = "robson123"
+                    Email = "robson@gmail.com",
+                    Senha = "robson123"
                 },
 
                 new Usuario
                 {
                     idUsuario = 3,
-                    idTpoUsuario = 2,
+                    idTipoUsuario = 2,
                     nomeUsuario = "Clebinho",
-                    email = "clebinho@gmail.com",
-                    senha = "clebinho123"
+                    Email = "clebinho@gmail.com",
+                    Senha = "clebinho123"
                 } 
                 
                );

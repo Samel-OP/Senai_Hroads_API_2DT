@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai.hroads.webApi_.Domains;
 using senai.hroads.webApi_.Interfaces;
@@ -66,6 +67,7 @@ namespace senai.hroads.webApi_.Controllers
         }
 
         //TESTADO
+        [Authorize(Roles = "administrador")]
         [HttpPost]
         public IActionResult Cadastrar(TiposHabilidade novaTiposHabilidade)
         {

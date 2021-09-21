@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai.hroads.webApi_.Domains;
 using senai.hroads.webApi_.Interfaces;
@@ -26,6 +27,10 @@ namespace senai.hroads.webApi_.Controllers
 
 
         //TESTADO
+        /// <summary>
+        /// Lista todas as classes
+        /// </summary>
+        /// <returns>Uma lista de classes e um status code.</returns>
         [HttpGet]
         public IActionResult ListarTodos()
         {
@@ -42,6 +47,10 @@ namespace senai.hroads.webApi_.Controllers
 
 
         //TESTADO
+        /// <summary>
+        /// Lista uma classe pelo seu Id
+        /// </summary>
+        /// <returns>Uma classe e um status code.</returns>
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {
@@ -71,6 +80,12 @@ namespace senai.hroads.webApi_.Controllers
         }
 
         //TESTADO
+        /// <summary>
+        /// Atualiza uma classe existente pelo seu Id
+        /// </summary>
+        /// <param name="id">Id da classe</param>
+        /// <param name="classeAtualizada">Objeto onde está as informções atualizadas</param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult AtualizarPorId(int id, Classe classeAtualizada)
         {
@@ -101,6 +116,11 @@ namespace senai.hroads.webApi_.Controllers
 
 
         //TESTADO
+        /// <summary>
+        /// Cadastra uma nova classe
+        /// </summary>
+        /// <returns>Um status code 201 - Created</returns>
+        [Authorize(Roles = "administrador")]
         [HttpPost]
         public IActionResult Cadastrar(Classe novaClasse)
         {
@@ -131,6 +151,12 @@ namespace senai.hroads.webApi_.Controllers
         }
 
         //TESTADO
+        /// <summary>
+        /// Deleta uma classe existente
+        /// </summary>
+        /// <param name="id">id da classe que será deletada</param>
+        /// <returns>Um status code 204 - No Content</returns>
+        /// ex: http://localhost:5000/api/classe/excluir/3
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {

@@ -28,7 +28,6 @@ namespace senai.hroads.webApi.Interfaces
         /// <returns> uma lista de usuario</returns>
         List<Usuario> Listar();
 
-
         /// <summary>
         /// atualiza um tipo de usuario pelo id
         /// </summary>
@@ -42,7 +41,6 @@ namespace senai.hroads.webApi.Interfaces
         /// <param name="id"> id do tipo usuario que será buscado</param>
         /// <returns>o tipo usuariio buscado</returns>
         Usuario BuscarPorId(int id);
-
 
         /// <summary>
         /// deleta um tipo de usuario

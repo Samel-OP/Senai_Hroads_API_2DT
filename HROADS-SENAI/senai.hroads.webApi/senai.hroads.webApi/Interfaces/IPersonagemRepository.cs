@@ -34,7 +34,7 @@ namespace senai.hroads.webApi_.Interfaces
         /// atualiza um personagem
         /// </summary>
         /// <param name="id">id do personagem</param>
-        /// <param name="">Objeto contendo as informações de personagem</param>
+        /// <param name="personagemAtualizado">Objeto contendo as informações de personagem</param>
         void Atualizar(int id, Personagem personagemAtualizado);
 
         /// <summary>

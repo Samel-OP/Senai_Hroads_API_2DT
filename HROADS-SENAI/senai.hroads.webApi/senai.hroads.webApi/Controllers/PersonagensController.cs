@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai.hroads.webApi_.Domains;
 using senai.hroads.webApi_.Interfaces;
@@ -24,9 +25,10 @@ namespace senai.hroads.webApi_.Controllers
         {
             _personagemRepository = new PersonagemRepository();
         }
-    
+
 
         //TESTADO
+        [Authorize(Roles = "administrador, jogador")]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -55,7 +57,7 @@ namespace senai.hroads.webApi_.Controllers
                 catch (Exception execp)
                 {
 
-                    return StatusCode(500);
+                    return BadRequest(execp);
                 }
             }
 
@@ -69,6 +71,7 @@ namespace senai.hroads.webApi_.Controllers
         }
 
         //TESTADO 
+        [Authorize(Roles = "jogador")]
         [HttpPost]
         public IActionResult Cadastrar(Personagem novoPersonagem)
         {
@@ -141,6 +144,4 @@ namespace senai.hroads.webApi_.Controllers
         }
 
     }
-
-
 }

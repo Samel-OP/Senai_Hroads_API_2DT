@@ -10,8 +10,8 @@ using senai.hroads.webApi_.Contexts;
 namespace senai.hroads.webApi_.Migrations
 {
     [DbContext(typeof(HroadsContext))]
-    [Migration("20210921115603_hroads-tarde")]
-    partial class hroadstarde
+    [Migration("20210921195143_senai-hroads-tarde")]
+    partial class senaihroadstarde
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -120,7 +120,7 @@ namespace senai.hroads.webApi_.Controllers
         /// Cadastra uma nova classe
         /// </summary>
         /// <returns>Um status code 201 - Created</returns>
-        [Authorize(Roles = "administrador")]
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Classe novaClasse)
         {

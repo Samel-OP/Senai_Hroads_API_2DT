@@ -26,7 +26,7 @@ namespace senai.hroads.webApi_
 
             .AddNewtonsoftJson(options => {
                  options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore; //método para ignorar valores nullos 
              });
 
             services.AddSwaggerGen(c =>
@@ -54,7 +54,7 @@ namespace senai.hroads.webApi_
                         ValidateAudience = true,
                         ValidateLifetime = true,
                         IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("hroads-chave-autenticacao")),
-                        ClockSkew = TimeSpan.FromMinutes(30),
+                        ClockSkew = TimeSpan.FromHours(1),
                         ValidIssuer = "senai.hroads.webApi",
                         ValidAudience = "senai.hroads.webApi"
                     };
@@ -74,6 +74,8 @@ namespace senai.hroads.webApi_
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseRouting();
+            
             app.UseSwagger();
 
             app.UseSwaggerUI(c => {
@@ -81,7 +83,6 @@ namespace senai.hroads.webApi_
                 c.RoutePrefix = string.Empty;
             });
 
-            app.UseRouting();
 
             app.UseAuthentication();
 

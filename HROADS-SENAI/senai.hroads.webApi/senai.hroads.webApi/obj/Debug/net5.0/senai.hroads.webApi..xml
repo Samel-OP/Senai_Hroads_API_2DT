@@ -124,19 +124,19 @@
             <returns>Um status code 204 - No Content</returns>
             ex: http://localhost:5000/api/tiposUsuario/excluir/1
         </member>
-        <member name="M:senai.hroads.webApi_.Controllers.UsuarioController.ListarTodos">
+        <member name="M:senai.hroads.webApi_.Controllers.UsuariosController.ListarTodos">
             <summary>
             Lista todos os usuários
             </summary>
             <returns>Uma lista de usuários e um status code.</returns>
         </member>
-        <member name="M:senai.hroads.webApi_.Controllers.UsuarioController.BuscarPorId(System.Int32)">
+        <member name="M:senai.hroads.webApi_.Controllers.UsuariosController.BuscarPorId(System.Int32)">
             <summary>
             Lista um usuário pelo seu Id
             </summary>
             <returns>Um usuário e um status code.</returns>
         </member>
-        <member name="M:senai.hroads.webApi_.Controllers.UsuarioController.AtualizarPorId(System.Int32,senai.hroads.webApi_.Domains.Usuario)">
+        <member name="M:senai.hroads.webApi_.Controllers.UsuariosController.AtualizarPorId(System.Int32,senai.hroads.webApi_.Domains.Usuario)">
             <summary>
             Atualiza um usuário existente pelo seu Id
             </summary>
@@ -144,13 +144,13 @@
             <param name="usuarioAtualizado">Objeto onde está as informções atualizadas</param>
             <returns></returns>
         </member>
-        <member name="M:senai.hroads.webApi_.Controllers.UsuarioController.Cadastrar(senai.hroads.webApi_.Domains.Usuario)">
+        <member name="M:senai.hroads.webApi_.Controllers.UsuariosController.Cadastrar(senai.hroads.webApi_.Domains.Usuario)">
             <summary>
             Cadastra um novo usuário
             </summary>
             <returns>Um status code 201 - Created</returns>
         </member>
-        <member name="M:senai.hroads.webApi_.Controllers.UsuarioController.Deletar(System.Int32)">
+        <member name="M:senai.hroads.webApi_.Controllers.UsuariosController.Deletar(System.Int32)">
             <summary>
             Deleta um usuário existente
             </summary>

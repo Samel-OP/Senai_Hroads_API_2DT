@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using senai.hroads.webApi_.Interfaces;
 using senai.hroads.webApi_.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace senai.hroads.webApi_.Repositories
 {
@@ -59,7 +60,7 @@ namespace senai.hroads.webApi_.Repositories
         public List<ClasseHabilidade> Listar()
         {
             //lista todas as ch's
-            return context.ClasseHabilidade.ToList();
+            return context.ClasseHabilidade.Include(c => c.classe).Include(h => h.habilidade).ToList();
         }
     }
 }

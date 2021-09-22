@@ -27,6 +27,7 @@ namespace senai.hroads.webApi_.Controllers
         /// Lista todos os tipos de usuários
         /// </summary>
         /// <returns>Uma lista de tipos de usuários e um status code.</returns>
+        [Authorize(Roles = "1, 2")]
         [HttpGet]
         public IActionResult ListarTodos()
         {
@@ -45,14 +46,15 @@ namespace senai.hroads.webApi_.Controllers
         /// </summary>
         /// <returns>Um tipo de usuário e um status code.</returns>
         [HttpGet("{id}")]
+        [Authorize(Roles = "1")]
         public IActionResult BuscarPorId(int id)
         {
             TiposUsuario tipoUsuarioBuscado = _tipoUsuarioRepository.BuscarPorId(id);
-            
+
             if (tipoUsuarioBuscado == null)
             {
                 return NotFound(
-                    new 
+                    new
                     {
                         mensagem = "Esse tipo de usuário não existe ou algo de errado!",
                         erro = true
@@ -75,6 +77,7 @@ namespace senai.hroads.webApi_.Controllers
         /// <param name="id">Id do tipo de usuário</param>
         /// <param name="tiposUsuarioAtualizado">Objeto onde está as informções atualizadas</param>
         /// <returns></returns>
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult AtualizarPorId(int id, TiposUsuario tiposUsuarioAtualizado)
         {
@@ -105,7 +108,7 @@ namespace senai.hroads.webApi_.Controllers
         /// Cadastra um novo tipo de usuário
         /// </summary>
         /// <returns>Um status code 201 - Created</returns>
-        [Authorize(Roles = "administrador")]
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(TiposUsuario novoTipoUsuario)
         {
@@ -136,7 +139,7 @@ namespace senai.hroads.webApi_.Controllers
         /// <param name="id">id do tipo de usuário que será deletado</param>
         /// <returns>Um status code 204 - No Content</returns>
         /// ex: http://localhost:5000/api/tiposUsuario/excluir/1
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
             TiposUsuario tipoUsuarioBuscado = _tipoUsuarioRepository.BuscarPorId(id);

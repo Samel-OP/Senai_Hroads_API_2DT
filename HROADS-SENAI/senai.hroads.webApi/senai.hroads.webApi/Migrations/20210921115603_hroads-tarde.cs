@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace senai.hroads.webApi_.Migrations
 {
-    public partial class HROADSTARDE : Migration
+    public partial class hroadstarde : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,20 +18,6 @@ namespace senai.hroads.webApi_.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Classe", x => x.idClasse);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ClasseHabilidade",
-                columns: table => new
-                {
-                    idClasseHabilidade = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    idClasse = table.Column<int>(type: "int", nullable: false),
-                    idHabilidade = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ClasseHabilidade", x => x.idClasseHabilidade);
                 });
 
             migrationBuilder.CreateTable(
@@ -110,11 +96,10 @@ namespace senai.hroads.webApi_.Migrations
                 {
                     idUsuario = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    idTpoUsuario = table.Column<int>(type: "int", nullable: false),
+                    idTipoUsuario = table.Column<int>(type: "int", nullable: false),
                     varchar100 = table.Column<string>(name: "varchar(100)", type: "nvarchar(max)", nullable: false),
                     varchar256 = table.Column<string>(name: "varchar(256)", type: "nvarchar(max)", nullable: false),
-                    varchar12 = table.Column<string>(name: "varchar(12)", type: "nvarchar(12)", maxLength: 12, nullable: false),
-                    idTipoUsuario = table.Column<int>(type: "int", nullable: true)
+                    varchar12 = table.Column<string>(name: "varchar(12)", type: "nvarchar(12)", maxLength: 12, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -124,7 +109,33 @@ namespace senai.hroads.webApi_.Migrations
                         column: x => x.idTipoUsuario,
                         principalTable: "TiposUsuario",
                         principalColumn: "idTipoUsuario",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ClasseHabilidade",
+                columns: table => new
+                {
+                    idClasseHabilidade = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    idClasse = table.Column<int>(type: "int", nullable: false),
+                    idHabilidade = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClasseHabilidade", x => x.idClasseHabilidade);
+                    table.ForeignKey(
+                        name: "FK_ClasseHabilidade_Classe_idClasse",
+                        column: x => x.idClasse,
+                        principalTable: "Classe",
+                        principalColumn: "idClasse",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ClasseHabilidade_Habilidade_idHabilidade",
+                        column: x => x.idHabilidade,
+                        principalTable: "Habilidade",
+                        principalColumn: "idHabilidade",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -139,20 +150,6 @@ namespace senai.hroads.webApi_.Migrations
                     { 5, "Necromante" },
                     { 6, "Feiticeiro" },
                     { 7, "Arcanista" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "ClasseHabilidade",
-                columns: new[] { "idClasseHabilidade", "idClasse", "idHabilidade" },
-                values: new object[,]
-                {
-                    { 7, 6, 3 },
-                    { 6, 4, 2 },
-                    { 4, 3, 1 },
-                    { 5, 4, 3 },
-                    { 2, 1, 2 },
-                    { 1, 1, 1 },
-                    { 3, 2, 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -176,16 +173,6 @@ namespace senai.hroads.webApi_.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Usuario",
-                columns: new[] { "idUsuario", "varchar(256)", "idTipoUsuario", "idTpoUsuario", "varchar(100)", "varchar(12)" },
-                values: new object[,]
-                {
-                    { 2, "robson@gmail.com", null, 2, "Robson", "robson123" },
-                    { 1, "adm@gmail.com", null, 1, "Administrador", "adm123" },
-                    { 3, "clebinho@gmail.com", null, 2, "Clebinho", "clebinho123" }
-                });
-
-            migrationBuilder.InsertData(
                 table: "Habilidade",
                 columns: new[] { "idHabilidade", "idTipoHabilidade", "nomeHabilidade" },
                 values: new object[,]
@@ -204,6 +191,40 @@ namespace senai.hroads.webApi_.Migrations
                     { 2, "BitBug", (byte)100, (short)70, new DateTime(2016, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), 4 },
                     { 3, "Fer8", (byte)60, (short)75, new DateTime(2018, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), 7 }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Usuario",
+                columns: new[] { "idUsuario", "varchar(256)", "varchar(12)", "idTipoUsuario", "varchar(100)" },
+                values: new object[,]
+                {
+                    { 1, "adm@gmail.com", "adm123", 1, "Administrador" },
+                    { 2, "robson@gmail.com", "robson123", 2, "Robson" },
+                    { 3, "clebinho@gmail.com", "clebinho123", 2, "Clebinho" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ClasseHabilidade",
+                columns: new[] { "idClasseHabilidade", "idClasse", "idHabilidade" },
+                values: new object[,]
+                {
+                    { 1, 1, 1 },
+                    { 3, 2, 1 },
+                    { 4, 3, 1 },
+                    { 2, 1, 2 },
+                    { 6, 4, 2 },
+                    { 5, 4, 3 },
+                    { 7, 6, 3 }
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ClasseHabilidade_idClasse",
+                table: "ClasseHabilidade",
+                column: "idClasse");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ClasseHabilidade_idHabilidade",
+                table: "ClasseHabilidade",
+                column: "idHabilidade");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Habilidade_idTipoHabilidade",
@@ -227,22 +248,22 @@ namespace senai.hroads.webApi_.Migrations
                 name: "ClasseHabilidade");
 
             migrationBuilder.DropTable(
-                name: "Habilidade");
-
-            migrationBuilder.DropTable(
                 name: "Personagem");
 
             migrationBuilder.DropTable(
                 name: "Usuario");
 
             migrationBuilder.DropTable(
-                name: "TiposHabilidade");
+                name: "Habilidade");
 
             migrationBuilder.DropTable(
                 name: "Classe");
 
             migrationBuilder.DropTable(
                 name: "TiposUsuario");
+
+            migrationBuilder.DropTable(
+                name: "TiposHabilidade");
         }
     }
 }

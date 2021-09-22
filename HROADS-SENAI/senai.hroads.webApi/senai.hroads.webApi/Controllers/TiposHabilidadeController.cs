@@ -67,7 +67,7 @@ namespace senai.hroads.webApi_.Controllers
         }
 
         //TESTADO
-        [Authorize(Roles = "administrador")]
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(TiposHabilidade novaTiposHabilidade)
         {

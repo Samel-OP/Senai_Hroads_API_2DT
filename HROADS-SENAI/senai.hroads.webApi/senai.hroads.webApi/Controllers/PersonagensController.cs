@@ -27,8 +27,8 @@ namespace senai.hroads.webApi_.Controllers
         }
 
 
-        //TESTADO
-        [Authorize(Roles = "administrador, jogador")]
+ 
+        [Authorize(Roles = "2")]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -43,6 +43,7 @@ namespace senai.hroads.webApi_.Controllers
         }
 
         //TESTADO
+        [Authorize(Roles = "1, 2")]
         [HttpGet("{id}")]
         public IActionResult ListarPorId(int id)
         {
@@ -71,7 +72,7 @@ namespace senai.hroads.webApi_.Controllers
         }
 
         //TESTADO 
-        [Authorize(Roles = "jogador")]
+        [Authorize(Roles = "2")]
         [HttpPost]
         public IActionResult Cadastrar(Personagem novoPersonagem)
         {
@@ -92,6 +93,7 @@ namespace senai.hroads.webApi_.Controllers
         }
 
         //TESTADO
+        [Authorize(Roles = "2")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Personagem personagemAtualizado)
         {
@@ -122,6 +124,7 @@ namespace senai.hroads.webApi_.Controllers
         }
 
         //TESTADO
+        [Authorize(Roles = "2")]
         [HttpDelete("{id}")]
         public IActionResult Deletar (int id)
         {

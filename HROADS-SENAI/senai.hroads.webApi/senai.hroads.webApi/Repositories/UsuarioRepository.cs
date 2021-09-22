@@ -1,4 +1,5 @@
-﻿using senai.hroads.webApi.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using senai.hroads.webApi.Interfaces;
 using senai.hroads.webApi_.Contexts;
 using senai.hroads.webApi_.Domains;
 using System;
@@ -52,7 +53,19 @@ namespace senai.hroads.webApi_.Repositories
 
         public List<Usuario> Listar()
         {
-            return ctx.Usuario.ToList();
+            // Select tem a mesma função que no SQL, neste caso ele está sendo usado para especificar o que será exibido
+            return ctx.Usuario.Select(e => 
+                new Usuario 
+            
+            { 
+                
+                idUsuario = e.idUsuario, 
+                idTipoUsuario = e.idTipoUsuario, 
+                nomeUsuario = e.nomeUsuario, 
+                Email = e.Email, 
+                tipoUsuario = e.tipoUsuario
+                
+            }).ToList();
         }
 
         public Usuario Login(string email, string senha)

@@ -47,7 +47,7 @@ namespace senai.hroads.webApi_.Controllers
                 var minhasClaims = new[]
                 {
                     new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
-                    new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.idUsuario.ToString()),
+                    new Claim(JwtRegisteredClaimNames.Jti,usuarioBuscado.idUsuario.ToString()),
                     new Claim(ClaimTypes.Role, usuarioBuscado.idTipoUsuario.ToString())
                 };
 
@@ -56,10 +56,10 @@ namespace senai.hroads.webApi_.Controllers
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
                 var meuToken = new JwtSecurityToken(
-                       issuer:              "senai.hroads.webAPI",
-                       audience:            "senai.hroads.webAPI",
+                       issuer:              "senai.hroads.webApi",
+                       audience:            "senai.hroads.webApi",
                        claims:              minhasClaims,
-                       expires:             DateTime.Now.AddHours(5),
+                       expires:             DateTime.Now.AddHours(1),
                        signingCredentials:  creds
                     );
 

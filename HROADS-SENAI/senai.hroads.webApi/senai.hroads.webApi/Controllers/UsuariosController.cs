@@ -14,11 +14,11 @@ namespace senai.hroads.webApi_.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class UsuariosController : ControllerBase
     {
         private IUsuarioRepository _usuarioRepository { get; set; }
 
-        public UsuarioController()
+        public UsuariosController()
         {
             _usuarioRepository = new UsuarioRepository();
         }
@@ -80,6 +80,7 @@ namespace senai.hroads.webApi_.Controllers
         /// <param name="id">Id do usuário</param>
         /// <param name="usuarioAtualizado">Objeto onde está as informções atualizadas</param>
         /// <returns></returns>
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult AtualizarPorId(int id, Usuario usuarioAtualizado)
         {
@@ -111,7 +112,7 @@ namespace senai.hroads.webApi_.Controllers
         /// Cadastra um novo usuário
         /// </summary>
         /// <returns>Um status code 201 - Created</returns>
-        [Authorize(Roles = "administrador")]
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Usuario novoUsuario)
         {
@@ -143,6 +144,7 @@ namespace senai.hroads.webApi_.Controllers
         /// <param name="id">id do usuário que será deletado</param>
         /// <returns>Um status code 204 - No Content</returns>
         /// ex: http://localhost:5000/api/usuario/excluir/2
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
